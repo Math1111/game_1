@@ -1,12 +1,16 @@
 import pygame
+import random
 pygame.init()
+pygame.mixer.init()
+#pygame.mixer.music.load("music.mp3")
+#pygame.mixer.music.play(-1)
 
-size=(1280, 720)
-screen = pygame.display.set_mode(size)
+size=(0, 0)
 pygame.display.set_caption("Моя игра")
+screen = pygame.display.set_mode(size)
 
-# Задаем цвета
 BACKGROUND=(255, 255, 255)
+
 BLACK=(0, 0, 0)
 WHITE=(255, 255, 255)
 GREEN=(0, 255, 0)
@@ -28,8 +32,8 @@ TEAL=(0, 128, 128)
 SILVER=(192, 192, 192)
 GOLD=(255, 215, 0)
 
-FPS=60
-clock = pygame.time.Clock()
+COLORS=[BLACK, WHITE, GREEN, RED, BLUE, YELLOW, GYAN, MAGENTA, GRAY, ORANGE, PINK, BROWN, PURPLE, LIME, NAVY, OLIVE,
+        MAROON, TEAL, SILVER, GOLD]
 
 
 running=True
@@ -37,7 +41,12 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+    color_index=random.randint(0,7)
+    if color_index==7:
+        BACKGROUND = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+    else:
+        BACKGROUND = COLORS[color_index]
     screen.fill(BACKGROUND)
     pygame.display.flip()
-    clock.tick(FPS)
+    pygame.time.delay(random.randint(200, 800))
 pygame.quit()
