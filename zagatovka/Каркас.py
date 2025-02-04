@@ -11,8 +11,11 @@ screen = pygame.display.set_mode(size)
 
 BACKGROUND=(255, 255, 255)
 
-BLACK=(0, 0, 0)
-WHITE=(255, 255, 255)
+#line_color=(255, 0, 0)
+#line_width=5
+#start_pos=(0, size[1]//2)
+#end_pos=(size[0], size[1]//2)
+
 GREEN=(0, 255, 0)
 RED=(255, 0, 0)
 BLUE=(0, 0, 255)
@@ -32,9 +35,8 @@ TEAL=(0, 128, 128)
 SILVER=(192, 192, 192)
 GOLD=(255, 215, 0)
 
-COLORS=[BLACK, WHITE, GREEN, RED, BLUE, YELLOW, GYAN, MAGENTA, GRAY, ORANGE, PINK, BROWN, PURPLE, LIME, NAVY, OLIVE,
+COLORS=[GREEN, RED, BLUE, YELLOW, GYAN, MAGENTA, GRAY, ORANGE, PINK, BROWN, PURPLE, LIME, NAVY, OLIVE,
         MAROON, TEAL, SILVER, GOLD]
-
 
 running=True
 while running:
@@ -47,6 +49,13 @@ while running:
     else:
         BACKGROUND = COLORS[color_index]
     screen.fill(BACKGROUND)
+
+    for _ in range(23):
+        x=random.randint(0,2160)
+        y=random.randint(0,1080)
+        radius=random.randint(10, 100)
+        color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        pygame.draw.circle(screen, color, (x, y), radius)
     pygame.display.flip()
     pygame.time.delay(random.randint(200, 800))
 pygame.quit()
