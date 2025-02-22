@@ -67,6 +67,6 @@ while running:
         color = random.choice(COLORS)
         pygame.draw.rect(screen, color, rect)
     pygame.display.flip()
-    pygame.time.delay(random.randint(150, 400))
+    pygame.time.delay(random.randint(700, 800))
 
 pygame.quit()
