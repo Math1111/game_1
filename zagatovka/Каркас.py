@@ -1,12 +1,12 @@
 import random
 import pygame
 pygame.init()
-# pygame.mixer.init()
+pygame.mixer.init()#
 
 
 
-#pygame.mixer.music.load("music.mp3")
-#pygame.mixer.music.play(-1)
+pygame.mixer.music.load("music.mp3")#
+pygame.mixer.music.play(-1)#
 
 size=(0, 0)
 pygame.display.set_caption("Моя игра")
@@ -14,10 +14,10 @@ screen = pygame.display.set_mode(size)
 
 BACKGROUND=(255, 255, 255)
 
-#line_color=(255, 0, 0)
-#line_width=5
-#start_pos=(0, size[1]//2)
-#end_pos=(size[0], size[1]//2)
+line_color=(255, 0, 0)#
+line_width=5#
+start_pos=(0, size[1]//2)#
+end_pos=(size[0], size[1]//2)#
 
 GREEN=(0, 255, 0)
 RED=(255, 0, 0)
